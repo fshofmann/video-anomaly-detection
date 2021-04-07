@@ -1,0 +1,178 @@
+\documentclass{standalone}
+\usepackage{tikz} % To generate the plot from csv
+\usepackage{pgfplots}
+
+% graph colors
+\definecolor{blue}{rgb}{0.0, 0.0, 1.0}
+\definecolor{red}{rgb}{1.0, 0.03, 0.0}
+
+% label position
+\pgfplotsset{
+  /pgfplots/xlabel near ticks/.style={
+     /pgfplots/every axis x label/.style={
+        at={(ticklabel cs:0.5)},anchor=near ticklabel
+     }
+  },
+  /pgfplots/ylabel near ticks/.style={
+     /pgfplots/every axis y label/.style={
+        at={(ticklabel cs:0.5)},rotate=90,anchor=near ticklabel}
+     }
+}
+	
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+		xmin=0, xmax=18500, %17920
+    ymax=1.99,
+    axis lines = left,
+    xlabel = $Frame$,
+    ylabel = $Error$,
+    ylabel near ticks,
+    xlabel near ticks,
+    label style={font=\scriptsize},
+    tick label style={font=\scriptsize},
+    no markers,
+    axis on top,
+    ymode=log,
+    log ticks with fixed point,
+    width=1\textwidth,
+    height=0.33\textwidth,
+]
+
+% Normal
+\addplot [draw=green,fill=green,opacity=0.5,line width=0.05pt]%$00001 - 01557$
+        coordinates {(0,0.02) (0,1.6) (1557-7,1.6) (1557-7,0.02)};
+\addplot [draw=green,fill=green,opacity=0.5,line width=0.05pt]%$01558 - 01876$
+        coordinates {(1558-7,0.02) (1558-7,1.6) (1876-7,1.6) (1876-7,0.02)};
+\addplot [draw=green,fill=green,opacity=0.5,line width=0.05pt]%$01877 - 02389$
+        coordinates {(1877-7,0.02) (1877-7,1.6) (2389-7,1.6) (2389-7,0.02)};
+\addplot [draw=green,fill=green,opacity=0.5,line width=0.05pt]%$02743 - 02831$
+        coordinates {(2743 -7,0.02) (2743 -7,1.6) (2831-7,1.6) (2831-7,0.02)};
+\addplot [draw=green,fill=green,opacity=0.5,line width=0.05pt]%$03270 - 03666$
+        coordinates {(3270-7,0.02) (3270-7,1.6) (3666-7,1.6) (3666-7,0.02)};
+\addplot [draw=green,fill=green,opacity=0.5,line width=0.05pt]%$03667 - 03672$
+        coordinates {(3667-7,0.02) (3667-7,1.6) (3672-7,1.6) (3672-7,0.02)};
+\addplot [draw=green,fill=green,opacity=0.5,line width=0.05pt]%$04170 - 05420$
+        coordinates {(4170-7,0.02) (4170-7,1.6) (5420-7,1.6) (5420-7,0.02)};
+\addplot [draw=green,fill=green,opacity=0.5,line width=0.05pt]%$06861 - 07337$
+        coordinates {(6861-7,0.02) (6861-7,1.6) (7337-7,1.6) (7337-7,0.02)};
+\addplot [draw=green,fill=green,opacity=0.5,line width=0.05pt]%$07338 - 08109$
+        coordinates {(7338-7,0.02) (7338-7,1.6) (8109-7,1.6) (8109-7,0.02)};
+\addplot [draw=green,fill=green,opacity=0.5,line width=0.05pt]%$09720 - 09775$
+        coordinates {(9720-7,0.02) (9720-7,1.6) (9775-7,1.6) (9775-7,0.02)};
+\addplot [draw=green,fill=green,opacity=0.5,line width=0.05pt]%$09776 - 10249$
+        coordinates {(9776-7,0.02) (9776-7,1.6) (10249-7,1.6) (10249-7,0.02)};
+\addplot [draw=green,fill=green,opacity=0.5,line width=0.05pt]%$10371 - 10509$
+        coordinates {(10371-7,0.02) (10371-7,1.6) (10509-7,1.6) (10509-7,0.02)};
+\addplot [draw=green,fill=green,opacity=0.5,line width=0.05pt]%$10537 - 10608$
+        coordinates {(10537-7,0.02) (10537-7,1.6) (10608-7,1.6) (10608-7,0.02)};
+\addplot [draw=green,fill=green,opacity=0.5,line width=0.05pt]%$10729 - 11305$
+        coordinates {(10729-7,0.02) (10729-7,1.6) (11305-7,1.6) (11305-7,0.02)};
+\addplot [draw=green,fill=green,opacity=0.5,line width=0.05pt]%$11460 - 11924$
+        coordinates {(11460-7,0.02) (11460-7,1.6) (11924-7,1.6) (11924-7,0.02)};
+\addplot [draw=green,fill=green,opacity=0.5,line width=0.05pt]%$11925 - 11970$
+        coordinates {(11925-7,0.02) (11925-7,1.6) (11970-7,1.6) (11970-7,0.02)};
+\addplot [draw=green,fill=green,opacity=0.5,line width=0.05pt]%$12019 - 13959$
+        coordinates {(12019-7,0.02) (12019-7,1.6) (13959-7,1.6) (13959-7,0.02)};
+\addplot [draw=green,fill=green,opacity=0.5,line width=0.05pt]%$14139 - 14269$
+        coordinates {(14139-7,0.02) (14139-7,1.6) (14269-7,1.6) (14269-7,0.02)};
+\addplot [draw=green,fill=green,opacity=0.5,line width=0.05pt]%$14270 - 15641$
+        coordinates {(14270-7,0.02) (14270-7,1.6) (15641-7,1.6) (15641-7,0.02)};
+\addplot [draw=green,fill=green,opacity=0.5,line width=0.05pt]%$15642 - 16890$
+        coordinates {(15642-7,0.02) (15642-7,1.6) (16890-7,1.6) (16890-7,0.02)};
+\addplot [draw=green,fill=green,opacity=0.5,line width=0.05pt]%$16893 - 16896$
+        coordinates {(16893-7,0.02) (16893-7,1.6) (16896-7,1.6) (16896-7,0.02)};
+\addplot [draw=green,fill=green,opacity=0.5,line width=0.05pt]%$17165 - 17168$
+        coordinates {(17165-7,0.02) (17165-7,1.6) (17168-7,1.6) (17168-7,0.02)};
+\addplot [draw=green,fill=green,opacity=0.5,line width=0.05pt]%$17429 - 18066$
+        coordinates {(17429-7,0.02) (17429-7,1.6) (18066-7,1.6) (18000,0.02)};
+
+% Non-Contextual Anomaly              
+\addplot [draw=red,fill=red,opacity=0.5,line width=0.05pt]%$03136 - 03269$
+        coordinates {(3136-7,0.02) (3136-7,1.6) (3269-7,1.6) (3269-7,0.02)};
+\addplot [draw=red,fill=red,opacity=0.5,line width=0.05pt]%$03673 - 04169$
+        coordinates {(3673-7,0.02) (3673-7,1.6) (4169-7,1.6) (4169-7,0.02)};
+\addplot [draw=red,fill=red,opacity=0.5,line width=0.05pt]%$05421 - 05810$
+        coordinates {(5421-7,0.02) (5421-7,1.6) (5810-7,1.6) (5810-7,0.02)};
+\addplot [draw=red,fill=red,opacity=0.5,line width=0.05pt]%$05811 - 05917$
+        coordinates {(5811-7,0.02) (5811-7,1.6) (5917-7,1.6) (5917-7,0.02)};
+\addplot [draw=red,fill=red,opacity=0.5,line width=0.05pt]%$05918 - 06352$
+        coordinates {(5918-7,0.02) (5918-7,1.6) (6352-7,1.6) (6352-7,0.02)};
+\addplot [draw=red,fill=red,opacity=0.5,line width=0.05pt]%$06353 - 06440$
+        coordinates {(6353-7,0.02) (6353-7,1.6) (6440-7,1.6) (6440-7,0.02)};
+\addplot [draw=red,fill=red,opacity=0.5,line width=0.05pt]%$06441 - 06468$
+        coordinates {(6441-7,0.02) (6441-7,1.6) (6468-7,1.6) (6468-7,0.02)};
+\addplot [draw=red,fill=red,opacity=0.5,line width=0.05pt]%$06469 - 06776$
+        coordinates {(6469-7,0.02) (6469-7,1.6) (6776-7,1.6) (6776-7,0.02)};
+\addplot [draw=red,fill=red,opacity=0.5,line width=0.05pt]%$06777 - 06828$
+        coordinates {(6777-7,0.02) (6777-7,1.6) (6828-7,1.6) (6828-7,0.02)};
+\addplot [draw=red,fill=red,opacity=0.5,line width=0.05pt]%$06829 - 06860$
+        coordinates {(6829-7,0.02) (6829-7,1.6) (6860-7,1.6) (6860-7,0.02)};
+\addplot [draw=red,fill=red,opacity=0.5,line width=0.05pt]%$08110 - 08115$
+        coordinates {(8110-7,0.02) (8110-7,1.6) (8115-7,1.6) (8115-7,0.02)};
+\addplot [draw=red,fill=red,opacity=0.5,line width=0.05pt]%$10510 - 10536$
+        coordinates {(10510-7,0.02) (10510-7,1.6) (10536-7,1.6) (10536-7,0.02)};
+\addplot [draw=red,fill=red,opacity=0.5,line width=0.05pt]%$10696 - 10722$
+        coordinates {(10696-7,0.02) (10696-7,1.6) (10722-7,1.6) (10722-7,0.02)};
+\addplot [draw=red,fill=red,opacity=0.5,line width=0.05pt]%$11971 - 12000$
+        coordinates {(11971-7,0.02) (11971-7,1.6) (12000-7,1.6) (12000-7,0.02)};
+\addplot [draw=red,fill=red,opacity=0.5,line width=0.05pt]%$12001 - 12018$
+        coordinates {(12001-7,0.02) (12001-7,1.6) (12018-7,1.6) (12018-7,0.02)};
+\addplot [draw=red,fill=red,opacity=0.5,line width=0.05pt]%$17096 - 17164$
+        coordinates {(17096-7,0.02) (17096-7,1.6) (17164-7,1.6) (17164-7,0.02)};
+\addplot [draw=red,fill=red,opacity=0.5,line width=0.05pt]%$17169 - 17218$
+        coordinates {(17169-7,0.02) (17169-7,1.6) (17218-7,1.6) (17218-7,0.02)};
+
+% Contextual Anomaly
+\addplot [draw=red,fill=red,opacity=0.5,line width=0.05pt]%$02390 - 02742$
+        coordinates {(2390-7,0.02) (2390-7,1.6) (2742-7,1.6) (2742-7,0.02)};
+\addplot [draw=red,fill=red,opacity=0.5,line width=0.05pt]%$02832 - 03135$
+        coordinates {(2832-7,0.02) (2832-7,1.6) (3135-7,1.6) (3135-7,0.02)};
+\addplot [draw=red,fill=red,opacity=0.5,line width=0.05pt]%$08116 - 08913$
+        coordinates {(8116-7,0.02) (8116-7,1.6) (8913-7,1.6) (8913-7,0.02)};
+\addplot [draw=red,fill=red,opacity=0.5,line width=0.05pt]%$08914 - 09065$
+        coordinates {(8914-7,0.02) (8914-7,1.6) (9065-7,1.6) (9065-7,0.02)};
+\addplot [draw=red,fill=red,opacity=0.5,line width=0.05pt]%$09066 - 09135$
+        coordinates {(9066-7,0.02) (9066-7,1.6) (9135-7,1.6) (9135-7,0.02)};
+\addplot [draw=red,fill=red,opacity=0.5,line width=0.05pt]%$09136 - 09161$
+        coordinates {(9136-7,0.02) (9136-7,1.6) (9161-7,1.6) (9161-7,0.02)};
+\addplot [draw=red,fill=red,opacity=0.5,line width=0.05pt]%$09162 - 09589$
+        coordinates {(9162-7,0.02) (9162-7,1.6) (9589-7,1.6) (9589-7,0.02)};
+\addplot [draw=red,fill=red,opacity=0.5,line width=0.05pt]%$09590 - 09695$
+        coordinates {(9590-7,0.02) (9590-7,1.6) (9695-7,1.6) (9695-7,0.02)};
+\addplot [draw=red,fill=red,opacity=0.5,line width=0.05pt]%$09696 - 09719$
+        coordinates {(9696-7,0.02) (9696-7,1.6) (9719-7,1.6) (9719-7,0.02)};
+\addplot [draw=red,fill=red,opacity=0.5,line width=0.05pt]%$10250 - 10370$
+        coordinates {(10250-7,0.02) (10250-7,1.6) (10370-7,1.6) (10370-7,0.02)};
+\addplot [draw=red,fill=red,opacity=0.5,line width=0.05pt]%$10609 - 10625$
+        coordinates {(10609-7,0.02) (10609-7,1.6) (10625-7,1.6) (10625-7,0.02)};
+\addplot [draw=red,fill=red,opacity=0.5,line width=0.05pt]%$10626 - 10677$
+        coordinates {(10626-7,0.02) (10626-7,1.6) (10677-7,1.6) (10677-7,0.02)};
+\addplot [draw=red,fill=red,opacity=0.5,line width=0.05pt]%$10678 - 10695$
+        coordinates {(10678-7,0.02) (10678-7,1.6) (10695-7,1.6) (10695-7,0.02)};
+\addplot [draw=red,fill=red,opacity=0.5,line width=0.05pt]%$10723 - 10728$
+        coordinates {(10723-7,0.02) (10723-7,1.6) (10728-7,1.6) (10728-7,0.02)};
+\addplot [draw=red,fill=red,opacity=0.5,line width=0.05pt]%$11306 - 11459$
+        coordinates {(11306-7,0.02) (11306-7,1.6) (11459-7,1.6) (11459-7,0.02)};
+\addplot [draw=red,fill=red,opacity=0.5,line width=0.05pt]%$13960 - 14138$
+        coordinates {(13960-7,0.02) (13960-7,1.6) (14138-7,1.6) (14138-7,0.02)};
+\addplot [draw=red,fill=red,opacity=0.5,line width=0.05pt]%$16891 - 16892$
+        coordinates {(16891-7,0.02) (16891-7,1.6) (16892-7,1.6) (16892-7,0.02)};
+\addplot [draw=red,fill=red,opacity=0.5,line width=0.05pt]%$16897 - 17095$
+        coordinates {(16897-7,0.02) (16897-7,1.6) (17095-7,1.6) (17095-7,0.02)};
+\addplot [draw=red,fill=red,opacity=0.5,line width=0.05pt]%$17219 - 17342$
+        coordinates {(17219-7,0.02) (17219-7,1.6) (17342-7,1.6) (17342-7,0.02)};
+\addplot [draw=red,fill=red,opacity=0.5,line width=0.05pt]%$17343 - 17396$
+        coordinates {(17343-7,0.02) (17343-7,1.6) (17396-7,1.6) (17396-7,0.02)};
+\addplot [draw=red,fill=red,opacity=0.5,line width=0.05pt]%$17397 - 17428$
+        coordinates {(17397-7,0.02) (17397-7,1.6) (17428-7,1.6) (17428-7,0.02)};
+
+% Error
+\addplot [blue] table [x=time,y=if_value,col sep=semicolon]  {cvgan_2_dfilter-16_ddropout-0.3_lambda-10_batchsize-8_learningrate-0.0002_epochs-0050_errorfn-mean_absolute_error_res.csv}; 
+
+% Threshold
+\addplot [red,dashed] table [x=time,y=threshold,col sep=semicolon]  {cvgan_2_dfilter-16_ddropout-0.3_lambda-10_batchsize-8_learningrate-0.0002_epochs-0050_errorfn-mean_absolute_error_res.csv}; 
+       
+\end{axis}
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,5 @@
+# Checkpoint directories
+**/training_checkpoints
+
+# GIFs of IFTM eval
+evaluation/iftm/anim

@@ -1,0 +1,40 @@
+\documentclass{standalone}
+\usepackage{tikz} % To generate the plot from csv
+\usepackage{pgfplots}
+\usepackage{pgfkeys}
+
+\newenvironment{customlegend}[1][]{%
+    \begingroup
+    % inits/clears the lists (which might be populated from previous
+    % axes):
+    \csname pgfplots@init@cleared@structures\endcsname
+    \pgfplotsset{#1}%
+}{%
+    % draws the legend:
+    \csname pgfplots@createlegend\endcsname
+    \endgroup
+}%
+
+% makes \addlegendimage available (typically only available within an axis environment):
+\def\addlegendimage{\csname pgfplots@addlegendimage\endcsname}
+
+% graph colors
+\definecolor{blue}{rgb}{0.0, 0.0, 1.0}
+\definecolor{red}{rgb}{1.0, 0.03, 0.0}
+\definecolor{darkgreen}{rgb}{0.13, 0.55, 0.13}
+	
+\begin{document}
+\begin{tikzpicture}
+    \begin{customlegend}[
+      legend columns=5,
+      legend style={column sep=2ex},
+      legend entries={$\Delta(x_t)$,$T_0$,$T_1$,\textit{N. Event},\textit{A. Event}}
+    ]
+    \addlegendimage{blue}
+    \addlegendimage{red,dashed}
+    \addlegendimage{darkgreen,dashed}
+    \addlegendimage{black,fill=green,fill opacity=0.5,area legend}
+    \addlegendimage{black,fill=red,fill opacity=0.5,area legend}
+    \end{customlegend}
+\end{tikzpicture}
+\end{document}

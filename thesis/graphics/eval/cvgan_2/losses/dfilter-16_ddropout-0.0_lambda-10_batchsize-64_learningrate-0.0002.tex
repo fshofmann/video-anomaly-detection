@@ -1,0 +1,27 @@
+\documentclass{standalone}
+\usepackage{tikz} % To generate the plot from csv
+\usepackage{pgfplots}
+
+% graph colors
+\definecolor{blue}{rgb}{0.0, 0.0, 1.0}
+\definecolor{red}{rgb}{1.0, 0.03, 0.0}
+\definecolor{purple}{rgb}{0.54, 0.17, 0.89}
+\definecolor{green}{rgb}{0.13, 0.55, 0.13}
+	
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+		xmin=0, xmax=52,
+    ymin=0, ymax=5.5,
+    axis lines = left,
+    xlabel = $Epoch$,
+    ylabel = $Loss$,
+    no markers,
+]
+\addplot [blue] table [x=time,y=g_train_loss,col sep=semicolon]  {dfilter-16_ddropout-0.0_lambda-10_batchsize-64_learningrate-0.0002.csv}; 
+\addplot [red] table [x=time,y=d_train_loss,col sep=semicolon]  {dfilter-16_ddropout-0.0_lambda-10_batchsize-64_learningrate-0.0002.csv}; 
+\addplot [purple] table [x=time,y=g_val_loss,col sep=semicolon]  {dfilter-16_ddropout-0.0_lambda-10_batchsize-64_learningrate-0.0002.csv}; 
+\addplot [green] table [x=time,y=d_val_loss,col sep=semicolon]  {dfilter-16_ddropout-0.0_lambda-10_batchsize-64_learningrate-0.0002.csv}; 
+\end{axis}
+\end{tikzpicture}
+\end{document}

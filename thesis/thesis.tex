@@ -1,0 +1,44 @@
+\input{layout.tex}
+
+% Front Matter
+
+\newcommand{\titleLineOne}{Anomaly Detection through}
+\newcommand{\titleLineTwo}{Video Generation Forecasting}
+\newcommand{\titleLineThree}{}
+\newcommand{\documentdate}{\today}
+\newcommand{\studentname}{Fabian Sebastian Hofmann}
+\newcommand{\abstracttextde}{In den letzten zwei Jahrzehnten hat sich die Menge an Videodaten, die von immer mehr und immer kostengünstigeren Überwachungskameras erzeugt werden, signifikant erhöht. Eine ma\-nu\-elle Auswertung dieser Videoströme durch menschliches Personal ist nicht mehr praktikabel. Daher ist es notwendig, Algorithmen und Machine Learning Modelle zu entwickeln, die abnormale Ereignisse automatisch erkennen. Solche Ereignisse reichen von Autounfällen über Straftaten bis hin zu medizinischen Notfällen. Eine Echtzeitanalyse der Videodaten ist hierbei oft zwingend notwendig, um so schnell wie möglich auf solche Ereignisse reagieren zu können. Die Analyse wird aber dadurch erschwert, dass Anomalien oft vielfältig und auch oft nicht im Voraus bekannt sind. Erschwerend kommt hinzu, dass einige dieser Anomalien kontextabhängig sind; was in einem Kontext normal ist, muss in anderen wiederum als abnormal gewertet werden.
+
+Diese Arbeit baut auf IFTM auf, ein generisches Framework zur unüberwachten Anomalieerkennung, das in Echtzeit Daten verarbeiten kann. Das Framework besteht aus zwei Komponenten: Einer Identitätsfunktion, die auch mit einem Vorhersagemodell ersetzt werden kann, und einem Schwellenwertmodell, das lernt, zwischen normalen und abnormalen Daten zu unterscheiden. Wir nutzen und adaptieren dieses Framework für die Erkennung von Anomalien in Videos und dabei integrieren wir unser eigenes Vorhersagemodell in das System: Um die großen Mengen an rohen Videomaterial zu nutzen, designen wir ein Vorhersagemodell, das in der Lage ist das nächste Einzelbild eines Videos vorherzusagen. Wir verwenden dafür eine Generative Adversarial Network Architektur. Das Netzwerk nutzt eine räumliche und zeitliche Faltungsarchitektur um ein Video in seine dynamischen Komponenten und dessen statischen Hintergrund zu zerlegen. Dies wird erreicht, indem das Netzwerk zwei voneinander getrennte Verarbeitungspfade besitzt, einen für jeden der beiden Komponenten. Im Gegensatz zu früheren Arbeiten separieren wir diese beiden Pfade vollständig von Beginn des Netzwerkes an. Dadurch wird das Modell dazu gezwungen, Szenendynamik und statischen Hintergrund nicht zu mischen, sondern sie getrennt aus einem Video zu extrahieren, bevor es eine Vorhersage für die dynamischen Komponenten durchführt und am Ende aus beiden Teilen ein vollständiges Video erzeugt.
+
+Eine experimentelle Evaluation wird mit einem neuen Datensatz von 10 Tagen rohen Videomaterial, das mittels einer Überwachungskamera in einem Arbeitszimmer gesammelt wurde, durchgeführt. Für den kleineren aber beschrifteten Evaluationsdatensatz werden die Anomalien von uns nach ihrer Art katalogisiert und detailliert erläutert. Ausführliche Experimente mit dem Datensatz zeigen vielversprechende Ergebnisse, die die Effektivität unseres Ansatzes beweist. Sowohl in Hinblick auf die Robustheit gegenüber unbekannten normalen Ereignissen, als auch eine notwendige Sensitivität gegenüber neuen Anomalien.}
+\newcommand{\abstracttext}{Over the last two decades, the amount of data produced by surveillance cameras has continuously increased due to cheaper hardware solutions. It is no longer feasible to manually analyze these video streams using human operators, and thus it is essential to develop ways to detect abnormal events automatically. These events range from car crashes and crimes to human medical emergencies, so the analysis of these video streams must be done in real-time to react on these events as soon as possible. Besides the real-time requirement, such systems often struggle with the fact that the anomalies can occur in all kinds of shapes and they are often not known in advance. Furthermore, some of these anomalies are highly context-dependent, i.e. to be considered normal in one context, while anomalous in all others.
+
+This work extends on IFTM, a generic framework for unsupervised anomaly detection, which is able to work on real-time data. The framework consists of an underlying identify function or forecasting model and a threshold model that learns to distinguish between normal and abnormal state of the monitored data. We utilize and adapt this framework for video anomaly detection and integrate our own proposed forecasting model into it: To leverage the readily available and large amounts of unlabeled video data, we propose a next-frame prediction model trained in adversarial fashion. The generative adversarial network features a spatio-temporal convolutional architecture that untangles the moving foreground of a video from its static background using two separate pathways. Unlike previous works, we extend these fully untangled pathways into their respective latent spaces and convolutional encoders. This explicitly forces the model to extract scene dynamics and static appearance patterns separately from a given input video, before making a prediction on the motion patterns and combining the two components into the final video output.
+
+An experimental evaluation is conducted with a new data set of 10 days of unlabeled video material, created using a CCTV camera placed in an office. The anomalies in the smaller but labeled evaluation data set are catalogued by us on their type and explained in detail. Extensive experiments on the data set show promising results, validating the effectiveness of our approach in terms of robustness to unknown normal events and sensitivity to anomalous ones.}
+\newcommand{\acktext}{First of all, I am grateful to my advisor Florian Schmidt, who offered me to work on this enlightening topic. His support, suggestions, and constructive comments over the last year were of great help. I would also like to acknowledge three fellow students; Anton, Dominik, and Quade. They provided me with helpful feedback on how to illustrate and structure certain topics in this work. Finally, I would like to thank Professor Odej Kao for his support of my thesis.}
+
+\begin{document} 
+
+\input{frontmatter.tex}
+
+% Body Matter (use input to add chapters)
+
+\input{sections/introduction.tex} % 1-3
+
+\input{sections/background.tex} % 10
+
+\input{sections/contribution.tex} % 30-40
+
+\input{sections/results.tex} % 20-30
+
+\input{sections/stateoftheart.tex} % 10-15
+
+\input{sections/conclusion.tex} % 1
+
+% Back Matter (use input to add appendices, if really needed)
+
+\input{bib.tex}
+
+\end{document}
